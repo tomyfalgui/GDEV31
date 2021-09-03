@@ -48,12 +48,20 @@ public:
 	 Vector3 negative()
 	 {
 		 Vector3 ret;
+	         ret.x = -x;
+		 ret.y = -y;
+		 ret.z = -z;	 
 		 return ret;
 	 }
 	
 	/**
 	 * Task 2: magnitude() member function
 	 */
+	float magnitude() {
+		float inside = pow(x, 2) + pow(y, 2) + pow(z, 2); 
+		return sqrt(inside);
+
+	}
 	 
 	/**
 	 * Task 3: squaredMagnitude() member function
@@ -109,7 +117,15 @@ int main()
 	 * Task 12: Read input from standard input, and output
 	 * to standard output based on the sample output.
 	 */
-	 
+        Vector3 original (1.0f, -20.0f, 3.0f);
+	std::cout << original.x << std::endl;
+	std::cout << original.y << std::endl;
+	std::cout << original.z << std::endl;
+	Vector3 negated = original.negative();
+	std::cout << negated.x << std::endl;
+	std::cout << negated.y << std::endl;
+	std::cout << negated.z << std::endl;
+	std::cout << original.magnitude() << std::endl;
 	return 0;
 }
 
